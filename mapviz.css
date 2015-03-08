@@ -5,4 +5,8 @@ body {
     padding: 15px 15px;
     text-align: center;
 }
-
+.mastfoot {
+    text-align: center;
+    line-height: 0.8;
+    padding-top: 2%;
+}
