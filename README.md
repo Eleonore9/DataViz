@@ -12,4 +12,4 @@ Links to visualisation:
 (amounts are in billion of euros) 
 - http://eleonore9.github.io/DataViz
 
-![screenshotFinData] (https://raw.github.com/Eleonore9/DataViz/master/dataviz_.jpg)
+![screenshotFinData] (https://raw.github.com/Eleonore9/DataViz/master/20130806_openSpending/dataviz_.jpg)
