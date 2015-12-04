@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://rawgit.com/andrewgiessel/leafletstuff/master/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_07df53fd9e0f47a7b0a5014d573b5daf" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_07df53fd9e0f47a7b0a5014d573b5daf', {
+                                       center:[17.145087, 3.223233],
+                                       zoom: 4,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      /*
+      addition of the image layers
+      */
+      
+      
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+      var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_1 = L.marker([12.4777805, 
+							-3.58795703101],
+							{'icon':marker_1_icon}
+							);
+      marker_1.bindPopup("Prevalence of SAM: 1.40");
+      marker_1._popup.options.maxWidth = 300;
+      map.addLayer(marker_1)
+      
+      var marker_2_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_2 = L.marker([10.30718125, 
+							-4.43518922035],
+							{'icon':marker_2_icon}
+							);
+      marker_2.bindPopup("Prevalence of SAM: 0.20");
+      marker_2._popup.options.maxWidth = 300;
+      map.addLayer(marker_2)
+      
+      var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_3 = L.marker([12.36894, 
+							-1.54350736461],
+							{'icon':marker_3_icon}
+							);
+      marker_3.bindPopup("Prevalence of SAM: 1.80");
+      marker_3._popup.options.maxWidth = 300;
+      map.addLayer(marker_3)
+      
+      var marker_4_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_4 = L.marker([11.7337, 
+							-0.289661956173],
+							{'icon':marker_4_icon}
+							);
+      marker_4.bindPopup("Prevalence of SAM: 1.00");
+      marker_4._popup.options.maxWidth = 300;
+      map.addLayer(marker_4)
+      
+      var marker_5_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_5 = L.marker([13.23871, 
+							-1.03498305141],
+							{'icon':marker_5_icon}
+							);
+      marker_5.bindPopup("Prevalence of SAM: 1.00");
+      marker_5._popup.options.maxWidth = 300;
+      map.addLayer(marker_5)
+      
+      var marker_6_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_6 = L.marker([11.9066805, 
+							-2.30456904292],
+							{'icon':marker_6_icon}
+							);
+      marker_6.bindPopup("Prevalence of SAM: 1.60");
+      marker_6._popup.options.maxWidth = 300;
+      map.addLayer(marker_6)
+      
+      var marker_7_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_7 = L.marker([11.5833646, 
+							-1.05562995807],
+							{'icon':marker_7_icon}
+							);
+      marker_7.bindPopup("Prevalence of SAM: 0.70");
+      marker_7._popup.options.maxWidth = 300;
+      map.addLayer(marker_7)
+      
+      var marker_8_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_8 = L.marker([12.2527495, 
+							0.8736106],
+							{'icon':marker_8_icon}
+							);
+      marker_8.bindPopup("Prevalence of SAM: 1.80");
+      marker_8._popup.options.maxWidth = 300;
+      map.addLayer(marker_8)
+      
+      var marker_9_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_9 = L.marker([11.3890275, 
+							-4.04136488648],
+							{'icon':marker_9_icon}
+							);
+      marker_9.bindPopup("Prevalence of SAM: 2.20");
+      marker_9._popup.options.maxWidth = 300;
+      map.addLayer(marker_9)
+      
+      var marker_10_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_10 = L.marker([13.4526455, 
+							-2.227736],
+							{'icon':marker_10_icon}
+							);
+      marker_10.bindPopup("Prevalence of SAM: 2.60");
+      marker_10._popup.options.maxWidth = 300;
+      map.addLayer(marker_10)
+      
+      var marker_11_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_11 = L.marker([12.40414, 
+							-0.886415922462],
+							{'icon':marker_11_icon}
+							);
+      marker_11.bindPopup("Prevalence of SAM: 1.00");
+      marker_11._popup.options.maxWidth = 300;
+      map.addLayer(marker_11)
+      
+      var marker_12_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_12 = L.marker([14.3595545, 
+							-0.3646281],
+							{'icon':marker_12_icon}
+							);
+      marker_12.bindPopup("Prevalence of SAM: 2.50");
+      marker_12._popup.options.maxWidth = 300;
+      map.addLayer(marker_12)
+      
+      var marker_13_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'gray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_13 = L.marker([10.3893373, 
+							-3.28087520574],
+							{'icon':marker_13_icon}
+							);
+      marker_13.bindPopup("Prevalence of SAM: 0.70");
+      marker_13._popup.options.maxWidth = 300;
+      map.addLayer(marker_13)
+      
+      var marker_14_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_14 = L.marker([6.8518652, 
+							13.2445712],
+							{'icon':marker_14_icon}
+							);
+      marker_14.bindPopup("Prevalence of SAM: 1.50");
+      marker_14._popup.options.maxWidth = 300;
+      map.addLayer(marker_14)
+      
+      var marker_15_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_15 = L.marker([4.686267, 
+							11.9414512],
+							{'icon':marker_15_icon}
+							);
+      marker_15.bindPopup("Prevalence of SAM: 0.60");
+      marker_15._popup.options.maxWidth = 300;
+      map.addLayer(marker_15)
+      
+      var marker_16_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_16 = L.marker([3.9894393, 
+							14.178373],
+							{'icon':marker_16_icon}
+							);
+      marker_16.bindPopup("Prevalence of SAM: 0.00");
+      marker_16._popup.options.maxWidth = 300;
+      map.addLayer(marker_16)
+      
+      var marker_17_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_17 = L.marker([10.6377186, 
+							14.2738156],
+							{'icon':marker_17_icon}
+							);
+      marker_17.bindPopup("Prevalence of SAM: 2.00");
+      marker_17._popup.options.maxWidth = 300;
+      map.addLayer(marker_17)
+      
+      var marker_18_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_18 = L.marker([4.203033, 
+							10.0563057],
+							{'icon':marker_18_icon}
+							);
+      marker_18.bindPopup("Prevalence of SAM: 0.00");
+      marker_18._popup.options.maxWidth = 300;
+      map.addLayer(marker_18)
+      
+      var marker_19_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_19 = L.marker([4.5119069, 
+							10.3687761],
+							{'icon':marker_19_icon}
+							);
+      marker_19.bindPopup("Prevalence of SAM: 1.40");
+      marker_19._popup.options.maxWidth = 300;
+      map.addLayer(marker_19)
+      
+      var marker_20_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_20 = L.marker([6.3775255, 
+							10.3864171],
+							{'icon':marker_20_icon}
+							);
+      marker_20.bindPopup("Prevalence of SAM: 0.70");
+      marker_20._popup.options.maxWidth = 300;
+      map.addLayer(marker_20)
+      
+      var marker_21_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_21 = L.marker([5.5211184, 
+							10.6528684],
+							{'icon':marker_21_icon}
+							);
+      marker_21.bindPopup("Prevalence of SAM: 0.40");
+      marker_21._popup.options.maxWidth = 300;
+      map.addLayer(marker_21)
+      
+      var marker_22_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_22 = L.marker([4.513405, 
+							10.2796274],
+							{'icon':marker_22_icon}
+							);
+      marker_22.bindPopup("Prevalence of SAM: 2.90");
+      marker_22._popup.options.maxWidth = 300;
+      map.addLayer(marker_22)
+      
+      var marker_23_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkgreen',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_23 = L.marker([5.0577606, 
+							9.2289407],
+							{'icon':marker_23_icon}
+							);
+      marker_23.bindPopup("Prevalence of SAM: 0.40");
+      marker_23._popup.options.maxWidth = 300;
+      map.addLayer(marker_23)
+      
+      var marker_24_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_24 = L.marker([14.3565892, 
+							16.9009945],
+							{'icon':marker_24_icon}
+							);
+      marker_24.bindPopup("Prevalence of SAM: 2.40");
+      marker_24._popup.options.maxWidth = 300;
+      map.addLayer(marker_24)
+      
+      var marker_25_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_25 = L.marker([13.8367731, 
+							18.9649806],
+							{'icon':marker_25_icon}
+							);
+      marker_25.bindPopup("Prevalence of SAM: 3.90");
+      marker_25._popup.options.maxWidth = 300;
+      map.addLayer(marker_25)
+      
+      var marker_26_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_26 = L.marker([18.2474825, 
+							18.4237809],
+							{'icon':marker_26_icon}
+							);
+      marker_26.bindPopup("Prevalence of SAM: 10.10");
+      marker_26._popup.options.maxWidth = 300;
+      map.addLayer(marker_26)
+      
+      var marker_27_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_27 = L.marker([11.3345348, 
+							16.2884311],
+							{'icon':marker_27_icon}
+							);
+      marker_27.bindPopup("Prevalence of SAM: 0.20");
+      marker_27._popup.options.maxWidth = 300;
+      map.addLayer(marker_27)
+      
+      var marker_28_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_28 = L.marker([16.3074676, 
+							22.46964],
+							{'icon':marker_28_icon}
+							);
+      marker_28.bindPopup("Prevalence of SAM: 10.10");
+      marker_28._popup.options.maxWidth = 300;
+      map.addLayer(marker_28)
+      
+      var marker_29_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_29 = L.marker([18.3247397, 
+							19.250896],
+							{'icon':marker_29_icon}
+							);
+      marker_29.bindPopup("Prevalence of SAM: 10.10");
+      marker_29._popup.options.maxWidth = 300;
+      map.addLayer(marker_29)
+      
+      var marker_30_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_30 = L.marker([11.6753817, 
+							18.4910031],
+							{'icon':marker_30_icon}
+							);
+      marker_30.bindPopup("Prevalence of SAM: 0.90");
+      marker_30._popup.options.maxWidth = 300;
+      map.addLayer(marker_30)
+      
+      var marker_31_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_31 = L.marker([12.6540008, 
+							16.1860714],
+							{'icon':marker_31_icon}
+							);
+      marker_31.bindPopup("Prevalence of SAM: 1.20");
+      marker_31._popup.options.maxWidth = 300;
+      map.addLayer(marker_31)
+      
+      var marker_32_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_32 = L.marker([15.0005701, 
+							15.1048921],
+							{'icon':marker_32_icon}
+							);
+      marker_32.bindPopup("Prevalence of SAM: 1.30");
+      marker_32._popup.options.maxWidth = 300;
+      map.addLayer(marker_32)
+      
+      var marker_33_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_33 = L.marker([13.7797559, 
+							14.1550429],
+							{'icon':marker_33_icon}
+							);
+      marker_33.bindPopup("Prevalence of SAM: 1.00");
+      marker_33._popup.options.maxWidth = 300;
+      map.addLayer(marker_33)
+      
+      var marker_34_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_34 = L.marker([8.7687059, 
+							15.8302774],
+							{'icon':marker_34_icon}
+							);
+      marker_34.bindPopup("Prevalence of SAM: 5.10");
+      marker_34._popup.options.maxWidth = 300;
+      map.addLayer(marker_34)
+      
+      var marker_35_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_35 = L.marker([8.0687686, 
+							16.3548246],
+							{'icon':marker_35_icon}
+							);
+      marker_35.bindPopup("Prevalence of SAM: 4.30");
+      marker_35._popup.options.maxWidth = 300;
+      map.addLayer(marker_35)
+      
+      var marker_36_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_36 = L.marker([8.3972369, 
+							17.7431715],
+							{'icon':marker_36_icon}
+							);
+      marker_36.bindPopup("Prevalence of SAM: 1.60");
+      marker_36._popup.options.maxWidth = 300;
+      map.addLayer(marker_36)
+      
+      var marker_37_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_37 = L.marker([10.3563576, 
+							15.6755227],
+							{'icon':marker_37_icon}
+							);
+      marker_37.bindPopup("Prevalence of SAM: 5.20");
+      marker_37._popup.options.maxWidth = 300;
+      map.addLayer(marker_37)
+      
+      var marker_38_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_38 = L.marker([9.2640383, 
+							14.7151598],
+							{'icon':marker_38_icon}
+							);
+      marker_38.bindPopup("Prevalence of SAM: 4.20");
+      marker_38._popup.options.maxWidth = 300;
+      map.addLayer(marker_38)
+      
+      var marker_39_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_39 = L.marker([9.3604915, 
+							18.4905799],
+							{'icon':marker_39_icon}
+							);
+      marker_39.bindPopup("Prevalence of SAM: 2.20");
+      marker_39._popup.options.maxWidth = 300;
+      map.addLayer(marker_39)
+      
+      var marker_40_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_40 = L.marker([12.1191543, 
+							15.0502758],
+							{'icon':marker_40_icon}
+							);
+      marker_40.bindPopup("Prevalence of SAM: 0.60");
+      marker_40._popup.options.maxWidth = 300;
+      map.addLayer(marker_40)
+      
+      var marker_41_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_41 = L.marker([13.4613569, 
+							21.288445],
+							{'icon':marker_41_icon}
+							);
+      marker_41.bindPopup("Prevalence of SAM: 1.20");
+      marker_41._popup.options.maxWidth = 300;
+      map.addLayer(marker_41)
+      
+      var marker_42_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_42 = L.marker([10.7575596, 
+							20.6934116],
+							{'icon':marker_42_icon}
+							);
+      marker_42.bindPopup("Prevalence of SAM: 1.60");
+      marker_42._popup.options.maxWidth = 300;
+      map.addLayer(marker_42)
+      
+      var marker_43_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_43 = L.marker([12.1112295, 
+							21.3645066],
+							{'icon':marker_43_icon}
+							);
+      marker_43.bindPopup("Prevalence of SAM: 1.60");
+      marker_43._popup.options.maxWidth = 300;
+      map.addLayer(marker_43)
+      
+      var marker_44_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_44 = L.marker([9.5983875, 
+							16.6668247],
+							{'icon':marker_44_icon}
+							);
+      marker_44.bindPopup("Prevalence of SAM: 5.80");
+      marker_44._popup.options.maxWidth = 300;
+      map.addLayer(marker_44)
+      
+      var marker_45_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_45 = L.marker([21.6132867, 
+							16.5433168],
+							{'icon':marker_45_icon}
+							);
+      marker_45.bindPopup("Prevalence of SAM: 10.10");
+      marker_45._popup.options.maxWidth = 300;
+      map.addLayer(marker_45)
+      
+      var marker_46_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_46 = L.marker([15.0085336, 
+							21.3244967],
+							{'icon':marker_46_icon}
+							);
+      marker_46.bindPopup("Prevalence of SAM: 1.20");
+      marker_46._popup.options.maxWidth = 300;
+      map.addLayer(marker_46)
+      
+      var marker_47_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_47 = L.marker([13.4553495, 
+							-16.5756457],
+							{'icon':marker_47_icon}
+							);
+      marker_47.bindPopup("Prevalence of SAM: 3.10");
+      marker_47._popup.options.maxWidth = 300;
+      map.addLayer(marker_47)
+      
+      var marker_48_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_48 = L.marker([13.40499765, 
+							-14.1495574822],
+							{'icon':marker_48_icon}
+							);
+      marker_48.bindPopup("Prevalence of SAM: 7.10");
+      marker_48._popup.options.maxWidth = 300;
+      map.addLayer(marker_48)
+      
+      var marker_49_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_49 = L.marker([13.2743914, 
+							-16.6454431],
+							{'icon':marker_49_icon}
+							);
+      marker_49.bindPopup("Prevalence of SAM: 3.80");
+      marker_49._popup.options.maxWidth = 300;
+      map.addLayer(marker_49)
+      
+      var marker_50_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_50 = L.marker([13.49125225, 
+							-14.7389458501],
+							{'icon':marker_50_icon}
+							);
+      marker_50.bindPopup("Prevalence of SAM: 3.20");
+      marker_50._popup.options.maxWidth = 300;
+      map.addLayer(marker_50)
+      
+      var marker_51_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_51 = L.marker([13.45361065, 
+							-16.6546798908],
+							{'icon':marker_51_icon}
+							);
+      marker_51.bindPopup("Prevalence of SAM: 3.10");
+      marker_51._popup.options.maxWidth = 300;
+      map.addLayer(marker_51)
+      
+      var marker_52_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_52 = L.marker([13.4731283, 
+							-16.1334357412],
+							{'icon':marker_52_icon}
+							);
+      marker_52.bindPopup("Prevalence of SAM: 2.50");
+      marker_52._popup.options.maxWidth = 300;
+      map.addLayer(marker_52)
+      
+      var marker_53_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_53 = L.marker([13.66474425, 
+							-15.1240128831],
+							{'icon':marker_53_icon}
+							);
+      marker_53.bindPopup("Prevalence of SAM: 6.00");
+      marker_53._popup.options.maxWidth = 300;
+      map.addLayer(marker_53)
+      
+      var marker_54_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_54 = L.marker([13.39878045, 
+							-15.7252569132],
+							{'icon':marker_54_icon}
+							);
+      marker_54.bindPopup("Prevalence of SAM: 4.10");
+      marker_54._popup.options.maxWidth = 300;
+      map.addLayer(marker_54)
+      
+      var marker_55_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_55 = L.marker([12.6493194, 
+							-8.000337],
+							{'icon':marker_55_icon}
+							);
+      marker_55.bindPopup("Prevalence of SAM: 1.20");
+      marker_55._popup.options.maxWidth = 300;
+      map.addLayer(marker_55)
+      
+      var marker_56_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_56 = L.marker([16.2788129, 
+							-0.0412391],
+							{'icon':marker_56_icon}
+							);
+      marker_56.bindPopup("Prevalence of SAM: 2.00");
+      marker_56._popup.options.maxWidth = 300;
+      map.addLayer(marker_56)
+      
+      var marker_57_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_57 = L.marker([14.4434063, 
+							-11.4379135],
+							{'icon':marker_57_icon}
+							);
+      marker_57.bindPopup("Prevalence of SAM: 2.40");
+      marker_57._popup.options.maxWidth = 300;
+      map.addLayer(marker_57)
+      
+      var marker_58_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_58 = L.marker([18.4448656, 
+							1.409565],
+							{'icon':marker_58_icon}
+							);
+      marker_58.bindPopup("Prevalence of SAM: 2.00");
+      marker_58._popup.options.maxWidth = 300;
+      map.addLayer(marker_58)
+      
+      var marker_59_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_59 = L.marker([12.8646318, 
+							-7.5561287],
+							{'icon':marker_59_icon}
+							);
+      marker_59.bindPopup("Prevalence of SAM: 2.00");
+      marker_59._popup.options.maxWidth = 300;
+      map.addLayer(marker_59)
+      
+      var marker_60_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_60 = L.marker([14.4879631, 
+							-4.1905986],
+							{'icon':marker_60_icon}
+							);
+      marker_60.bindPopup("Prevalence of SAM: 1.60");
+      marker_60._popup.options.maxWidth = 300;
+      map.addLayer(marker_60)
+      
+      var marker_61_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_61 = L.marker([13.441518, 
+							-6.2681469],
+							{'icon':marker_61_icon}
+							);
+      marker_61.bindPopup("Prevalence of SAM: 1.20");
+      marker_61._popup.options.maxWidth = 300;
+      map.addLayer(marker_61)
+      
+      var marker_62_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_62 = L.marker([11.3164979, 
+							-5.6777499],
+							{'icon':marker_62_icon}
+							);
+      marker_62.bindPopup("Prevalence of SAM: 2.30");
+      marker_62._popup.options.maxWidth = 300;
+      map.addLayer(marker_62)
+      
+      var marker_63_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'cadetblue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_63 = L.marker([16.7719091, 
+							-3.0087271],
+							{'icon':marker_63_icon}
+							);
+      marker_63.bindPopup("Prevalence of SAM: 3.90");
+      marker_63._popup.options.maxWidth = 300;
+      map.addLayer(marker_63)
+      
+      var marker_64_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_64 = L.marker([21.0090623, 
+							-10.2207449],
+							{'icon':marker_64_icon}
+							);
+      marker_64.bindPopup("Prevalence of SAM: 1.30");
+      marker_64._popup.options.maxWidth = 300;
+      map.addLayer(marker_64)
+      
+      var marker_65_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_65 = L.marker([16.5809185, 
+							-11.5363724],
+							{'icon':marker_65_icon}
+							);
+      marker_65.bindPopup("Prevalence of SAM: 3.10");
+      marker_65._popup.options.maxWidth = 300;
+      map.addLayer(marker_65)
+      
+      var marker_66_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_66 = L.marker([17.2475638, 
+							-13.4037714],
+							{'icon':marker_66_icon}
+							);
+      marker_66.bindPopup("Prevalence of SAM: 0.90");
+      marker_66._popup.options.maxWidth = 300;
+      map.addLayer(marker_66)
+      
+      var marker_67_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_67 = L.marker([20.8019537, 
+							-16.0012708],
+							{'icon':marker_67_icon}
+							);
+      marker_67.bindPopup("Prevalence of SAM: 0.20");
+      marker_67._popup.options.maxWidth = 300;
+      map.addLayer(marker_67)
+      
+      var marker_68_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_68 = L.marker([16.2108391, 
+							-13.1220469],
+							{'icon':marker_68_icon}
+							);
+      marker_68.bindPopup("Prevalence of SAM: 2.30");
+      marker_68._popup.options.maxWidth = 300;
+      map.addLayer(marker_68)
+      
+      var marker_69_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_69 = L.marker([15.3766896, 
+							-12.124663],
+							{'icon':marker_69_icon}
+							);
+      marker_69.bindPopup("Prevalence of SAM: 2.90");
+      marker_69._popup.options.maxWidth = 300;
+      map.addLayer(marker_69)
+      
+      var marker_70_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_70 = L.marker([19.2697034, 
+							-9.4929445],
+							{'icon':marker_70_icon}
+							);
+      marker_70.bindPopup("Prevalence of SAM: 3.00");
+      marker_70._popup.options.maxWidth = 300;
+      map.addLayer(marker_70)
+      
+      var marker_71_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_71 = L.marker([16.5693922, 
+							-9.8322366],
+							{'icon':marker_71_icon}
+							);
+      marker_71.bindPopup("Prevalence of SAM: 2.40");
+      marker_71._popup.options.maxWidth = 300;
+      map.addLayer(marker_71)
+      
+      var marker_72_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_72 = L.marker([19.9922766, 
+							-15.113767],
+							{'icon':marker_72_icon}
+							);
+      marker_72.bindPopup("Prevalence of SAM: 1.30");
+      marker_72._popup.options.maxWidth = 300;
+      map.addLayer(marker_72)
+      
+      var marker_73_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_73 = L.marker([18.0794011, 
+							-15.9780393],
+							{'icon':marker_73_icon}
+							);
+      marker_73.bindPopup("Prevalence of SAM: 0.30");
+      marker_73._popup.options.maxWidth = 300;
+      map.addLayer(marker_73)
+      
+      var marker_74_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_74 = L.marker([18.5729893, 
+							-10.3937926],
+							{'icon':marker_74_icon}
+							);
+      marker_74.bindPopup("Prevalence of SAM: 3.30");
+      marker_74._popup.options.maxWidth = 300;
+      map.addLayer(marker_74)
+      
+      var marker_75_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_75 = L.marker([24.1951392, 
+							-9.6664199],
+							{'icon':marker_75_icon}
+							);
+      marker_75.bindPopup("Prevalence of SAM: 1.30");
+      marker_75._popup.options.maxWidth = 300;
+      map.addLayer(marker_75)
+      
+      var marker_76_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'purple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_76 = L.marker([17.922642, 
+							-14.8476017],
+							{'icon':marker_76_icon}
+							);
+      marker_76.bindPopup("Prevalence of SAM: 0.60");
+      marker_76._popup.options.maxWidth = 300;
+      map.addLayer(marker_76)
+      
+      var marker_77_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_77 = L.marker([16.9725555, 
+							7.9907389],
+							{'icon':marker_77_icon}
+							);
+      marker_77.bindPopup("Prevalence of SAM: 2.60");
+      marker_77._popup.options.maxWidth = 300;
+      map.addLayer(marker_77)
+      
+      var marker_78_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_78 = L.marker([13.3130749, 
+							12.6136611],
+							{'icon':marker_78_icon}
+							);
+      marker_78.bindPopup("Prevalence of SAM: 1.80");
+      marker_78._popup.options.maxWidth = 300;
+      map.addLayer(marker_78)
+      
+      var marker_79_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_79 = L.marker([13.3336993, 
+							3.621398],
+							{'icon':marker_79_icon}
+							);
+      marker_79.bindPopup("Prevalence of SAM: 2.40");
+      marker_79._popup.options.maxWidth = 300;
+      map.addLayer(marker_79)
+      
+      var marker_80_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_80 = L.marker([13.5012062, 
+							7.1025344],
+							{'icon':marker_80_icon}
+							);
+      marker_80.bindPopup("Prevalence of SAM: 3.40");
+      marker_80._popup.options.maxWidth = 300;
+      map.addLayer(marker_80)
+      
+      var marker_81_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_81 = L.marker([13.4998139, 
+							2.10948597212],
+							{'icon':marker_81_icon}
+							);
+      marker_81.bindPopup("Prevalence of SAM: 1.40");
+      marker_81._popup.options.maxWidth = 300;
+      map.addLayer(marker_81)
+      
+      var marker_82_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_82 = L.marker([14.8397, 
+							4.873025],
+							{'icon':marker_82_icon}
+							);
+      marker_82.bindPopup("Prevalence of SAM: 2.20");
+      marker_82._popup.options.maxWidth = 300;
+      map.addLayer(marker_82)
+      
+      var marker_83_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_83 = L.marker([14.654786, 
+							0.8874352],
+							{'icon':marker_83_icon}
+							);
+      marker_83.bindPopup("Prevalence of SAM: 2.80");
+      marker_83._popup.options.maxWidth = 300;
+      map.addLayer(marker_83)
+      
+      var marker_84_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkpurple',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_84 = L.marker([13.8063421, 
+							8.9891659],
+							{'icon':marker_84_icon}
+							);
+      marker_84.bindPopup("Prevalence of SAM: 1.90");
+      marker_84._popup.options.maxWidth = 300;
+      map.addLayer(marker_84)
+      
+      var marker_85_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_85 = L.marker([5.4540953, 
+							7.5153071],
+							{'icon':marker_85_icon}
+							);
+      marker_85.bindPopup("Prevalence of SAM: 0.30");
+      marker_85._popup.options.maxWidth = 300;
+      map.addLayer(marker_85)
+      
+      var marker_86_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_86 = L.marker([9.5129772, 
+							12.3881887],
+							{'icon':marker_86_icon}
+							);
+      marker_86.bindPopup("Prevalence of SAM: 0.00");
+      marker_86._popup.options.maxWidth = 300;
+      map.addLayer(marker_86)
+      
+      var marker_87_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_87 = L.marker([5.0047492, 
+							7.619581],
+							{'icon':marker_87_icon}
+							);
+      marker_87.bindPopup("Prevalence of SAM: 0.30");
+      marker_87._popup.options.maxWidth = 300;
+      map.addLayer(marker_87)
+      
+      var marker_88_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_88 = L.marker([6.2183136, 
+							6.9531842],
+							{'icon':marker_88_icon}
+							);
+      marker_88.bindPopup("Prevalence of SAM: 0.30");
+      marker_88._popup.options.maxWidth = 300;
+      map.addLayer(marker_88)
+      
+      var marker_89_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_89 = L.marker([10.6228284, 
+							10.0287754],
+							{'icon':marker_89_icon}
+							);
+      marker_89.bindPopup("Prevalence of SAM: 4.30");
+      marker_89._popup.options.maxWidth = 300;
+      map.addLayer(marker_89)
+      
+      var marker_90_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_90 = L.marker([4.7629786, 
+							6.028898],
+							{'icon':marker_90_icon}
+							);
+      marker_90.bindPopup("Prevalence of SAM: 0.00");
+      marker_90._popup.options.maxWidth = 300;
+      map.addLayer(marker_90)
+      
+      var marker_91_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_91 = L.marker([7.3505747, 
+							8.7772877],
+							{'icon':marker_91_icon}
+							);
+      marker_91.bindPopup("Prevalence of SAM: 0.30");
+      marker_91._popup.options.maxWidth = 300;
+      map.addLayer(marker_91)
+      
+      var marker_92_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_92 = L.marker([11.894804, 
+							13.2250498],
+							{'icon':marker_92_icon}
+							);
+      marker_92.bindPopup("Prevalence of SAM: 2.00");
+      marker_92._popup.options.maxWidth = 300;
+      map.addLayer(marker_92)
+      
+      var marker_93_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_93 = L.marker([5.8671966, 
+							8.5204774],
+							{'icon':marker_93_icon}
+							);
+      marker_93.bindPopup("Prevalence of SAM: 1.10");
+      marker_93._popup.options.maxWidth = 300;
+      map.addLayer(marker_93)
+      
+      var marker_94_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_94 = L.marker([5.5273061, 
+							6.1784167],
+							{'icon':marker_94_icon}
+							);
+      marker_94.bindPopup("Prevalence of SAM: 0.30");
+      marker_94._popup.options.maxWidth = 300;
+      map.addLayer(marker_94)
+      
+      var marker_95_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_95 = L.marker([6.5335734, 
+							8.133139121],
+							{'icon':marker_95_icon}
+							);
+      marker_95.bindPopup("Prevalence of SAM: 0.20");
+      marker_95._popup.options.maxWidth = 300;
+      map.addLayer(marker_95)
+      
+      var marker_96_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_96 = L.marker([6.6076575, 
+							5.9722713],
+							{'icon':marker_96_icon}
+							);
+      marker_96.bindPopup("Prevalence of SAM: 0.50");
+      marker_96._popup.options.maxWidth = 300;
+      map.addLayer(marker_96)
+      
+      var marker_97_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_97 = L.marker([8.11201715, 
+							5.34385591022],
+							{'icon':marker_97_icon}
+							);
+      marker_97.bindPopup("Prevalence of SAM: 0.00");
+      marker_97._popup.options.maxWidth = 300;
+      map.addLayer(marker_97)
+      
+      var marker_98_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_98 = L.marker([6.4499833, 
+							7.5000007],
+							{'icon':marker_98_icon}
+							);
+      marker_98.bindPopup("Prevalence of SAM: 0.80");
+      marker_98._popup.options.maxWidth = 300;
+      map.addLayer(marker_98)
+      
+      var marker_99_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_99 = L.marker([8.8311228, 
+							7.1724673],
+							{'icon':marker_99_icon}
+							);
+      marker_99.bindPopup("Prevalence of SAM: nan");
+      marker_99._popup.options.maxWidth = 300;
+      map.addLayer(marker_99)
+      
+      var marker_100_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_100 = L.marker([10.38301, 
+							11.206567],
+							{'icon':marker_100_icon}
+							);
+      marker_100.bindPopup("Prevalence of SAM: 1.40");
+      marker_100._popup.options.maxWidth = 300;
+      map.addLayer(marker_100)
+      
+      var marker_101_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_101 = L.marker([5.5859456, 
+							7.0669651],
+							{'icon':marker_101_icon}
+							);
+      marker_101.bindPopup("Prevalence of SAM: 0.00");
+      marker_101._popup.options.maxWidth = 300;
+      map.addLayer(marker_101)
+      
+      var marker_102_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_102 = L.marker([12.3252362, 
+							9.5103296],
+							{'icon':marker_102_icon}
+							);
+      marker_102.bindPopup("Prevalence of SAM: 3.60");
+      marker_102._popup.options.maxWidth = 300;
+      map.addLayer(marker_102)
+      
+      var marker_103_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_103 = L.marker([10.3825318, 
+							7.8533226],
+							{'icon':marker_103_icon}
+							);
+      marker_103.bindPopup("Prevalence of SAM: 0.00");
+      marker_103._popup.options.maxWidth = 300;
+      map.addLayer(marker_103)
+      
+      var marker_104_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_104 = L.marker([11.9918671, 
+							8.5303654],
+							{'icon':marker_104_icon}
+							);
+      marker_104.bindPopup("Prevalence of SAM: 4.00");
+      marker_104._popup.options.maxWidth = 300;
+      map.addLayer(marker_104)
+      
+      var marker_105_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_105 = L.marker([12.5630825, 
+							7.6207063],
+							{'icon':marker_105_icon}
+							);
+      marker_105.bindPopup("Prevalence of SAM: 0.50");
+      marker_105._popup.options.maxWidth = 300;
+      map.addLayer(marker_105)
+      
+      var marker_106_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_106 = L.marker([11.4206064, 
+							4.104901],
+							{'icon':marker_106_icon}
+							);
+      marker_106.bindPopup("Prevalence of SAM: 1.80");
+      marker_106._popup.options.maxWidth = 300;
+      map.addLayer(marker_106)
+      
+      var marker_107_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_107 = L.marker([8.1270318, 
+							6.85560950431],
+							{'icon':marker_107_icon}
+							);
+      marker_107.bindPopup("Prevalence of SAM: 0.00");
+      marker_107._popup.options.maxWidth = 300;
+      map.addLayer(marker_107)
+      
+      var marker_108_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_108 = L.marker([8.8367891, 
+							4.6688487],
+							{'icon':marker_108_icon}
+							);
+      marker_108.bindPopup("Prevalence of SAM: 1.00");
+      marker_108._popup.options.maxWidth = 300;
+      map.addLayer(marker_108)
+      
+      var marker_109_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_109 = L.marker([6.4550575, 
+							3.3941795],
+							{'icon':marker_109_icon}
+							);
+      marker_109.bindPopup("Prevalence of SAM: 0.90");
+      marker_109._popup.options.maxWidth = 300;
+      map.addLayer(marker_109)
+      
+      var marker_110_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_110 = L.marker([8.330112, 
+							7.7502585663],
+							{'icon':marker_110_icon}
+							);
+      marker_110.bindPopup("Prevalence of SAM: 0.70");
+      marker_110._popup.options.maxWidth = 300;
+      map.addLayer(marker_110)
+      
+      var marker_111_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_111 = L.marker([9.9326083, 
+							5.6511088],
+							{'icon':marker_111_icon}
+							);
+      marker_111.bindPopup("Prevalence of SAM: 0.30");
+      marker_111._popup.options.maxWidth = 300;
+      map.addLayer(marker_111)
+      
+      var marker_112_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_112 = L.marker([6.9788582, 
+							3.4389293],
+							{'icon':marker_112_icon}
+							);
+      marker_112.bindPopup("Prevalence of SAM: 0.20");
+      marker_112._popup.options.maxWidth = 300;
+      map.addLayer(marker_112)
+      
+      var marker_113_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_113 = L.marker([7.0209686, 
+							5.0567477],
+							{'icon':marker_113_icon}
+							);
+      marker_113.bindPopup("Prevalence of SAM: 0.20");
+      marker_113._popup.options.maxWidth = 300;
+      map.addLayer(marker_113)
+      
+      var marker_114_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_114 = L.marker([7.5484047, 
+							4.4978307],
+							{'icon':marker_114_icon}
+							);
+      marker_114.bindPopup("Prevalence of SAM: 0.50");
+      marker_114._popup.options.maxWidth = 300;
+      map.addLayer(marker_114)
+      
+      var marker_115_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_115 = L.marker([8.2151249, 
+							3.5642897],
+							{'icon':marker_115_icon}
+							);
+      marker_115.bindPopup("Prevalence of SAM: 1.30");
+      marker_115._popup.options.maxWidth = 300;
+      map.addLayer(marker_115)
+      
+      var marker_116_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_116 = L.marker([9.0583446, 
+							9.6826289],
+							{'icon':marker_116_icon}
+							);
+      marker_116.bindPopup("Prevalence of SAM: 0.00");
+      marker_116._popup.options.maxWidth = 300;
+      map.addLayer(marker_116)
+      
+      var marker_117_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_117 = L.marker([4.8416028, 
+							6.8604088],
+							{'icon':marker_117_icon}
+							);
+      marker_117.bindPopup("Prevalence of SAM: 0.30");
+      marker_117._popup.options.maxWidth = 300;
+      map.addLayer(marker_117)
+      
+      var marker_118_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_118 = L.marker([13.0611195, 
+							5.3152203],
+							{'icon':marker_118_icon}
+							);
+      marker_118.bindPopup("Prevalence of SAM: 1.70");
+      marker_118._popup.options.maxWidth = 300;
+      map.addLayer(marker_118)
+      
+      var marker_119_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_119 = L.marker([8.0141334, 
+							10.7376336],
+							{'icon':marker_119_icon}
+							);
+      marker_119.bindPopup("Prevalence of SAM: 0.50");
+      marker_119._popup.options.maxWidth = 300;
+      map.addLayer(marker_119)
+      
+      var marker_120_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_120 = L.marker([12.1233242, 
+							11.5065937],
+							{'icon':marker_120_icon}
+							);
+      marker_120.bindPopup("Prevalence of SAM: 3.10");
+      marker_120._popup.options.maxWidth = 300;
+      map.addLayer(marker_120)
+      
+      var marker_121_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'lightgray',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_121 = L.marker([12.011132, 
+							6.4200337],
+							{'icon':marker_121_icon}
+							);
+      marker_121.bindPopup("Prevalence of SAM: 1.20");
+      marker_121._popup.options.maxWidth = 300;
+      map.addLayer(marker_121)
+      
+      var marker_122_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_122 = L.marker([14.6934248, 
+							-17.4479377],
+							{'icon':marker_122_icon}
+							);
+      marker_122.bindPopup("Prevalence of SAM: 0.50");
+      marker_122._popup.options.maxWidth = 300;
+      map.addLayer(marker_122)
+      
+      var marker_123_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_123 = L.marker([14.7043898, 
+							-16.0511737],
+							{'icon':marker_123_icon}
+							);
+      marker_123.bindPopup("Prevalence of SAM: 1.10");
+      marker_123._popup.options.maxWidth = 300;
+      map.addLayer(marker_123)
+      
+      var marker_124_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_124 = L.marker([13.9406041, 
+							-16.4024021],
+							{'icon':marker_124_icon}
+							);
+      marker_124.bindPopup("Prevalence of SAM: 1.10");
+      marker_124._popup.options.maxWidth = 300;
+      map.addLayer(marker_124)
+      
+      var marker_125_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_125 = L.marker([14.2824927, 
+							-15.0247364],
+							{'icon':marker_125_icon}
+							);
+      marker_125.bindPopup("Prevalence of SAM: 1.00");
+      marker_125._popup.options.maxWidth = 300;
+      map.addLayer(marker_125)
+      
+      var marker_126_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_126 = L.marker([13.9631756, 
+							-15.7888834],
+							{'icon':marker_126_icon}
+							);
+      marker_126.bindPopup("Prevalence of SAM: 1.20");
+      marker_126._popup.options.maxWidth = 300;
+      map.addLayer(marker_126)
+      
+      var marker_127_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_127 = L.marker([12.5579907, 
+							-12.1866751],
+							{'icon':marker_127_icon}
+							);
+      marker_127.bindPopup("Prevalence of SAM: 1.10");
+      marker_127._popup.options.maxWidth = 300;
+      map.addLayer(marker_127)
+      
+      var marker_128_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_128 = L.marker([13.1291507, 
+							-14.4181472743],
+							{'icon':marker_128_icon}
+							);
+      marker_128.bindPopup("Prevalence of SAM: 1.20");
+      marker_128._popup.options.maxWidth = 300;
+      map.addLayer(marker_128)
+      
+      var marker_129_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_129 = L.marker([15.2401304, 
+							-15.3441834],
+							{'icon':marker_129_icon}
+							);
+      marker_129.bindPopup("Prevalence of SAM: 1.40");
+      marker_129._popup.options.maxWidth = 300;
+      map.addLayer(marker_129)
+      
+      var marker_130_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_130 = L.marker([15.0028849, 
+							-13.9240088],
+							{'icon':marker_130_icon}
+							);
+      marker_130.bindPopup("Prevalence of SAM: 3.50");
+      marker_130._popup.options.maxWidth = 300;
+      map.addLayer(marker_130)
+      
+      var marker_131_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_131 = L.marker([16.187637, 
+							-15.2954315],
+							{'icon':marker_131_icon}
+							);
+      marker_131.bindPopup("Prevalence of SAM: 2.30");
+      marker_131._popup.options.maxWidth = 300;
+      map.addLayer(marker_131)
+      
+      var marker_132_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_132 = L.marker([12.8935348, 
+							-15.5560695],
+							{'icon':marker_132_icon}
+							);
+      marker_132.bindPopup("Prevalence of SAM: 1.40");
+      marker_132._popup.options.maxWidth = 300;
+      map.addLayer(marker_132)
+      
+      var marker_133_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_133 = L.marker([13.8301533, 
+							-13.0891759],
+							{'icon':marker_133_icon}
+							);
+      marker_133.bindPopup("Prevalence of SAM: 2.00");
+      marker_133._popup.options.maxWidth = 300;
+      map.addLayer(marker_133)
+      
+      var marker_134_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_134 = L.marker([14.7948093, 
+							-16.9529272],
+							{'icon':marker_134_icon}
+							);
+      marker_134.bindPopup("Prevalence of SAM: 0.60");
+      marker_134._popup.options.maxWidth = 300;
+      map.addLayer(marker_134)
+      
+      var marker_135_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'darkred',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_135 = L.marker([12.5634929, 
+							-16.2724608],
+							{'icon':marker_135_icon}
+							);
+      marker_135.bindPopup("Prevalence of SAM: 0.90");
+      marker_135._popup.options.maxWidth = 300;
+      map.addLayer(marker_135)
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>
