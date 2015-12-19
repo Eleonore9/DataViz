@@ -6,6 +6,17 @@ Folium
 
 Visualisation of Severe Acute Malnutrition data in Sahel countries. [Notebook](http://nbviewer.ipython.org/github/Eleonore9/DataViz/blob/master/20151202_folium_SahelData/Sahel_data_folium.ipynb)
 
+* Simple markers on a leaflet.js map with data in popup windows:
+
+note: one colour per country
+
+![sam-simplemap-sahel](20151202_folium_SahelData/img/sam_sahel.png)
+
+
+* Choropleth map with colour intensity increasing with the prevalence of malnutrition:
+
+![sam-simplemap-sahel](20151202_folium_SahelData/img/choro_sam_sahel.png)
+
 
 CartoDB
 -----
