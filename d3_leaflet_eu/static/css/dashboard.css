@@ -1,5 +1,6 @@
-#mapid { 
-    border: 1px solid blue;
-    height: 30%;
-    width: 30%; 
+#map {
+    margin: 5% 0 2% 10%; 
+    /* border: 1px solid blue; */
+    height: 400px;
+    width: 80%; 
 }
