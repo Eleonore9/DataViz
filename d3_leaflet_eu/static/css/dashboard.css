@@ -1,6 +1,21 @@
 #map {
     margin: 5% 0 2% 10%; 
-    /* border: 1px solid blue; */
     height: 400px;
     width: 80%; 
+}
+
+svg {
+  position: relative;
+}
+
+path {
+  fill: #000;
+  fill-opacity: .2;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+path:hover {
+  fill: brown;
+  fill-opacity: .7;
 }
