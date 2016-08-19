@@ -10,4 +10,6 @@ Create an interactive web visualisation with D3 and Leaflet filtered using cross
 
 * [x] create a Python/Flask application
 
-* [ ] create a basic D3 + Leaflet visualisation following this [tutorial](https://bost.ocks.org/mike/leaflet/)
+* [x] create a basic D3 + Leaflet visualisation following this [tutorial](https://bost.ocks.org/mike/leaflet/)
+
+* [ ] use what I learned in the previous tutorial to visualise a dataset of my choice
