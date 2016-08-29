@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var myMap = L.map('map').setView([37.8, -96.9], 4);
+  var myMap = L.map('map').setView([53.4, 14.6], 3);
 
   var svg = d3.select(myMap.getPanes().overlayPane).append("svg"),
     g = svg.append("g").attr("class", "leaflet-zoom-hide");
@@ -9,7 +9,7 @@ $(document).ready(function() {
     this.stream.point(point.x, point.y);
   }
 
-  d3.json("static/js/us-states.json", function(error, collection) {
+  d3.json("static/data/countries.geojson", function(error, collection) {
     if (error) throw error;
     
     var transform = d3.geoTransform({point: projectPoint}),
