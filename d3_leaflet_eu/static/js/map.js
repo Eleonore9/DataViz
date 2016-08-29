@@ -9,7 +9,7 @@ $(document).ready(function() {
     this.stream.point(point.x, point.y);
   }
 
-  d3.json("static/data/countries.geojson", function(error, collection) {
+  d3.json("static/data/europe.json", function(error, collection) {
     if (error) throw error;
     
     var transform = d3.geoTransform({point: projectPoint}),

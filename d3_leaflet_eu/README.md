@@ -19,4 +19,4 @@ Create an interactive web visualisation with D3 and Leaflet filtered using cross
 
 * US states Geojson from [eric.clst.org/Stuff/USGeoJSON](http://eric.clst.org/Stuff/USGeoJSON)
 
-* Europe Geojson from the [European Data Portal](http://www.europeandataportal.eu/data/en/dataset/countries-december-2015-names-and-codes-in-the-united-kingdom) 
+* Europe Geojson from [geojson-maps.kyd.com.au/](http://geojson-maps.kyd.com.au/)
