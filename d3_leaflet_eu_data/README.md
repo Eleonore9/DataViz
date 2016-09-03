@@ -8,7 +8,7 @@ Create an interactive web visualisation with D3 and Leaflet filtered using cross
 
 #### Status:
 
-![screenshot dashboard](d3_leaflet_eu_data/d3_dashboard.png)
+![screenshot dashboard](d3_dashboard.png)
 
 * [x] create a Python/Flask application
 
