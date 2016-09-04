@@ -12,7 +12,7 @@ Working on an interactive map visualisation using D3 and Leaflet.
 Folium
 -----
 
-Visualisation of Severe Acute Malnutrition data in Sahel countries. [Notebook](http://nbviewer.ipython.org/github/Eleonore9/DataViz/blob/master/20151202_folium_SahelData/Sahel_data_folium.ipynb)
+Visualisation of Severe Acute Malnutrition data in Sahel countries. [Notebook](http://nbviewer.jupyter.org/github/Eleonore9/DataViz/blob/master/python_folium_sahel/Sahel_data_folium.ipynb)
 
 * Simple markers on a leaflet.js map with data in popup windows:
 
