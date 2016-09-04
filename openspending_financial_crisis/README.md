@@ -13,7 +13,7 @@ Visualising the financial aid data per European country during the financial cri
 * [Visualisation 2](http://openspending.org/financial_aid/views/financial-crisis-aid-2)
 note: amounts are in billion of euros
 
-![screenshot_FinData](openspending_financial_crisis/dataviz.jpg)
+![screenshot_FinData](dataviz.jpg)
 
 
 #### Data:
